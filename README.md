@@ -1,4 +1,10 @@
-# As 10 heurísticas de usabilidade
+<div align="center">
+
+# 💻 As 10 heurísticas de usabilidade 🖱️
+
+Atividade da matéria de Interação Humano Computador (IHC), o objetivo desse projeto é fazer um texto explicativo mostrando as 10 heurísticas e alguns exemplos de seu mal uso.
+
+</div>
 
 ## 1 - Visibilidade do status do sistema
 
