@@ -74,7 +74,7 @@ Um exemplo de mal uso é o Siga:
 
 <img src="./images/6.png" />
 
-O site da Prefeitura de Jambeiro é bastante poluído de informações, principalmente na barra de navegação, o que dificulta a localização rápida dos destinos desejados pelos usuários.
+Nesta aba do SIGA, também há o problema de falta de reconhecimento das funções do site. Os usuários enfrentam dificuldades ao procurar por funções específicas ou ao tentar lembrar onde elas estão localizadas.
 
 <br />
 
