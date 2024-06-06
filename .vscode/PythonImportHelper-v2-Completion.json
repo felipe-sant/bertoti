@@ -1,0 +1,109 @@
+[
+    {
+        "label": "telebot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "telebot",
+        "description": "telebot",
+        "detail": "telebot",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "dados",
+        "importPath": "dados",
+        "description": "dados",
+        "isExtraImport": true,
+        "detail": "dados",
+        "documentation": {}
+    },
+    {
+        "label": "dados",
+        "kind": 5,
+        "importPath": "src.dados",
+        "description": "src.dados",
+        "peekOfCode": "dados = {\n    \"token\": \"6907327488:AAETfaFgEMVLIG300-e4zIXXxbtn95mAqzA\",\n}",
+        "detail": "src.dados",
+        "documentation": {}
+    },
+    {
+        "label": "buscarProdutos",
+        "kind": 2,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "def buscarProdutos(url):\n    response = requests.get(url)\n    data = response.json()\n    return data\n@bot.message_handler(commands=['start', 'help'])\ndef start(m):\n    bot.send_message(m.chat.id, '''Bem vindo a pizzaria PedroAugusto's!\\nVocê pode fazer seu pedido, ver o cardápio ou ver um fato interessante sobre pizza!''')\n    keyBoard = telebot.types.ReplyKeyboardMarkup(row_width=1)\n    bot.send_message(m.chat.id, \"O que você deseja fazer?\", reply_markup=keyBoard)\n    bot.register_next_step_handler(m, escolhaDoUsuario)",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "start",
+        "kind": 2,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "def start(m):\n    bot.send_message(m.chat.id, '''Bem vindo a pizzaria PedroAugusto's!\\nVocê pode fazer seu pedido, ver o cardápio ou ver um fato interessante sobre pizza!''')\n    keyBoard = telebot.types.ReplyKeyboardMarkup(row_width=1)\n    bot.send_message(m.chat.id, \"O que você deseja fazer?\", reply_markup=keyBoard)\n    bot.register_next_step_handler(m, escolhaDoUsuario)\ndef escolhaDoUsuario(m):\n    mensagem = m.text\n    # intents = [\"pedido\", \"cardapio\", \"fato\"]\n    # classication_result = classifier(mensagem, intents)\n    # detect_intent = classication_result['labels'][0]",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "escolhaDoUsuario",
+        "kind": 2,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "def escolhaDoUsuario(m):\n    mensagem = m.text\n    # intents = [\"pedido\", \"cardapio\", \"fato\"]\n    # classication_result = classifier(mensagem, intents)\n    # detect_intent = classication_result['labels'][0]\n    detect_intent = mensagem\n    if detect_intent == \"pedido\":\n        pedido(m)\n        return\n    if detect_intent == \"cardapio\":",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "pedido",
+        "kind": 2,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "def pedido(m):\n    bot.send_message(m.chat.id, \"Pedido\")\ndef cardapio(m):\n    pizzas = buscarProdutos(\"http://localhost:3000/Pizzas\")\n    bebidas = buscarProdutos(\"http://localhost:3000/Bebidas\")\n    cardapio = \"-=- Cardápio -=-\\n\"\n    cardapio += \"\\nPizzas:\\n\"\n    for pizza in pizzas:\n        cardapio += f\"{pizza['nome']} - R${pizza['preco']}\\n\"\n    cardapio += \"\\nBebidas:\\n\"",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "cardapio",
+        "kind": 2,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "def cardapio(m):\n    pizzas = buscarProdutos(\"http://localhost:3000/Pizzas\")\n    bebidas = buscarProdutos(\"http://localhost:3000/Bebidas\")\n    cardapio = \"-=- Cardápio -=-\\n\"\n    cardapio += \"\\nPizzas:\\n\"\n    for pizza in pizzas:\n        cardapio += f\"{pizza['nome']} - R${pizza['preco']}\\n\"\n    cardapio += \"\\nBebidas:\\n\"\n    for bebida in bebidas:\n        cardapio += f\"{bebida['nome']} - R${bebida['preco']}\\n\"",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "fato",
+        "kind": 2,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "def fato(m):\n    bot.send_message(m.chat.id, \"Fato\")\nbot.polling()",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "bot",
+        "kind": 5,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "bot = telebot.TeleBot(dados[\"token\"])\n# classifier = pipeline(\"zero-shot-classification\")\ndef buscarProdutos(url):\n    response = requests.get(url)\n    data = response.json()\n    return data\n@bot.message_handler(commands=['start', 'help'])\ndef start(m):\n    bot.send_message(m.chat.id, '''Bem vindo a pizzaria PedroAugusto's!\\nVocê pode fazer seu pedido, ver o cardápio ou ver um fato interessante sobre pizza!''')\n    keyBoard = telebot.types.ReplyKeyboardMarkup(row_width=1)",
+        "detail": "src.index",
+        "documentation": {}
+    }
+]

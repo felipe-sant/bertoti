@@ -1,0 +1,36 @@
+{
+    "Pizzas": [
+        {
+            "id": 1,
+            "nome": "Calabresa",
+            "preco": 30.0
+        },
+        {
+            "id": 2,
+            "nome": "Mussarela",
+            "preco": 25.0
+        },
+        {
+            "id": 3,
+            "nome": "Portuguesa",
+            "preco": 35.0
+        }
+    ],
+    "Bebidas": [
+        {
+            "id": 1,
+            "nome": "Coca-Cola",
+            "preco": 5.0
+        },
+        {
+            "id": 2,
+            "nome": "Guaraná",
+            "preco": 4.0
+        },
+        {
+            "id": 3,
+            "nome": "Fanta",
+            "preco": 4.0
+        }
+    ]
+}

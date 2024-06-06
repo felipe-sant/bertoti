@@ -1,0 +1,9 @@
+{
+    "git.enabled": true,
+    "files.exclude": {
+        ".vscode": true,
+        ".gitignore": true,
+        "README.md": true,
+        "**/__pycache__": true
+    }
+}
