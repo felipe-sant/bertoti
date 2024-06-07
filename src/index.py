@@ -2,10 +2,9 @@ from transformers import pipeline
 import telebot
 import requests
 import random
-from dados import dados
 
 classifier = pipeline("zero-shot-classification")
-bot = telebot.TeleBot(dados["token"])
+bot = telebot.TeleBot("6907327488:AAETfaFgEMVLIG300-e4zIXXxbtn95mAqzA")
 
 def buscarProdutos(url):
     response = requests.get(url)
@@ -70,7 +69,7 @@ def pedidoBebida(m):
         pedido(m)
         return
     bot.send_message(m.chat.id, "Pedido realizado com sucesso!")
-    start()
+    start(m)
 
 def cardapio(m):
     pizzas = buscarProdutos("http://localhost:3000/Pizzas")

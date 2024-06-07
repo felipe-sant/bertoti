@@ -35,23 +35,6 @@
         "documentation": {}
     },
     {
-        "label": "dados",
-        "importPath": "dados",
-        "description": "dados",
-        "isExtraImport": true,
-        "detail": "dados",
-        "documentation": {}
-    },
-    {
-        "label": "dados",
-        "kind": 5,
-        "importPath": "src.dados",
-        "description": "src.dados",
-        "peekOfCode": "dados = {\n    \"token\": \"6907327488:AAETfaFgEMVLIG300-e4zIXXxbtn95mAqzA\",\n}",
-        "detail": "src.dados",
-        "documentation": {}
-    },
-    {
         "label": "buscarProdutos",
         "kind": 2,
         "importPath": "src.index",
@@ -101,7 +84,7 @@
         "kind": 2,
         "importPath": "src.index",
         "description": "src.index",
-        "peekOfCode": "def pedidoBebida(m):\n    bebida = m.text\n    bebidas = buscarProdutos(\"http://localhost:3000/Bebidas\")\n    if bebida not in [b['nome'] for b in bebidas]:\n        bot.send_message(m.chat.id, \"Bebida não encontrada, tente novamente\")\n        pedido(m)\n        return\n    bot.send_message(m.chat.id, \"Pedido realizado com sucesso!\")\n    start()\ndef cardapio(m):",
+        "peekOfCode": "def pedidoBebida(m):\n    bebida = m.text\n    bebidas = buscarProdutos(\"http://localhost:3000/Bebidas\")\n    if bebida not in [b['nome'] for b in bebidas]:\n        bot.send_message(m.chat.id, \"Bebida não encontrada, tente novamente\")\n        pedido(m)\n        return\n    bot.send_message(m.chat.id, \"Pedido realizado com sucesso!\")\n    start(m)\ndef cardapio(m):",
         "detail": "src.index",
         "documentation": {}
     },
@@ -128,7 +111,7 @@
         "kind": 5,
         "importPath": "src.index",
         "description": "src.index",
-        "peekOfCode": "classifier = pipeline(\"zero-shot-classification\")\nbot = telebot.TeleBot(dados[\"token\"])\ndef buscarProdutos(url):\n    response = requests.get(url)\n    data = response.json()\n    return data\n@bot.message_handler(commands=['start', 'help'])\ndef start(m):\n    bot.send_message(m.chat.id, '''Bem vindo a pizzaria PedroAugusto's!\\nVocê pode fazer seu pedido, ver o cardápio ou ver um fato interessante sobre pizza!''')\n    keyBoard = telebot.types.ReplyKeyboardMarkup(row_width=1)",
+        "peekOfCode": "classifier = pipeline(\"zero-shot-classification\")\nbot = telebot.TeleBot(\"6907327488:AAETfaFgEMVLIG300-e4zIXXxbtn95mAqzA\")\ndef buscarProdutos(url):\n    response = requests.get(url)\n    data = response.json()\n    return data\n@bot.message_handler(commands=['start', 'help'])\ndef start(m):\n    bot.send_message(m.chat.id, '''Bem vindo a pizzaria PedroAugusto's!\\nVocê pode fazer seu pedido, ver o cardápio ou ver um fato interessante sobre pizza!''')\n    keyBoard = telebot.types.ReplyKeyboardMarkup(row_width=1)",
         "detail": "src.index",
         "documentation": {}
     },
@@ -137,7 +120,7 @@
         "kind": 5,
         "importPath": "src.index",
         "description": "src.index",
-        "peekOfCode": "bot = telebot.TeleBot(dados[\"token\"])\ndef buscarProdutos(url):\n    response = requests.get(url)\n    data = response.json()\n    return data\n@bot.message_handler(commands=['start', 'help'])\ndef start(m):\n    bot.send_message(m.chat.id, '''Bem vindo a pizzaria PedroAugusto's!\\nVocê pode fazer seu pedido, ver o cardápio ou ver um fato interessante sobre pizza!''')\n    keyBoard = telebot.types.ReplyKeyboardMarkup(row_width=1)\n    bot.send_message(m.chat.id, \"O que você deseja fazer?\", reply_markup=keyBoard)",
+        "peekOfCode": "bot = telebot.TeleBot(\"6907327488:AAETfaFgEMVLIG300-e4zIXXxbtn95mAqzA\")\ndef buscarProdutos(url):\n    response = requests.get(url)\n    data = response.json()\n    return data\n@bot.message_handler(commands=['start', 'help'])\ndef start(m):\n    bot.send_message(m.chat.id, '''Bem vindo a pizzaria PedroAugusto's!\\nVocê pode fazer seu pedido, ver o cardápio ou ver um fato interessante sobre pizza!''')\n    keyBoard = telebot.types.ReplyKeyboardMarkup(row_width=1)\n    bot.send_message(m.chat.id, \"O que você deseja fazer?\", reply_markup=keyBoard)",
         "detail": "src.index",
         "documentation": {}
     }
